@@ -44,7 +44,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 
 ![](Images/4.png)
 
-7. After the the Benchmark is finished there will be a file called ***"results.txt"*** with important informations, but we only need the first 20 or less
+7. After the the Benchmark is finished there will be a file called ***"results.txt"*** with important informations, but you might only need the first 20 or less
 - ***Now you should stop and exit your CPU Stress Test!***
 - You need to look after the ***lowest DeltaMs*** and ***STDEV***, in my case it is at ***0.51ms*** (your results ***can and will*** be completely different)
 - You can also plot the results on this website: https://chart-studio.plotly.com/create/#/
