@@ -40,12 +40,19 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 
 6. Run ***Windows PowerShell*** as ***Admin*** and use these commands: ***"cd.."***, ***"cd.."***, ***".\bench.ps1"*** and ***"R"*** or in my case ***"M"*** to run it once and ***enter***
 - It will run for about 5min
+- After it is finished you can close it
 
 ![](Images/4.png)
 
 7. After the the Benchmark is finished there will be a file called ***"results.txt"*** with important informations, but we only need the first 20 or less
 - ***Now you should stop and exit your CPU Stress Test!***
-- You need to look after the ***lowest DeltaMs*** and ***STDEV***
-- In my case it is at ***0.51ms*** (your results ***can and will*** be completely different)
+- You need to look after the ***lowest DeltaMs*** and ***STDEV***, in my case it is at ***0.51ms*** (your results ***can and will*** be completely different)
+- You can also plot the results on this website: https://chart-studio.plotly.com/create/#/
 
 ![](Images/5.png)
+![](Images/6.png)
+
+8. Press **Win + R** and type ***"shell:startup"*** than create a shortcut of ***"TimerResolution.exe"*** and paste it into that folder
+- Right click on the shortcut and type at the end of the path " -resolution 5XXX -no-console" (replace 5XXX with your result from 7.)
+
+![](Images/7.png)
