@@ -12,4 +12,9 @@ It is evident that the timer resolution of 0.5ms is ***not*** a viable option fo
 Therefore, it is necessary to adjust the timer resolution to the specific resolution that the user's PC can handle optimally.
 
 ## How to tune Timer Resolution:
-![Open Windows PowerShell as Admin and use this command: ***Set-ExecutionPolicy Unrestricted*** after that press "A" and enter.](Images/1)
+- Open Regestry-Editor and go to ***HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel***, than create a dword called ***GlobalTimerResolutionRequests*** with the value set to 1.
+
+![](Images/2.png)
+- Open Windows PowerShell as Admin and use this command: ***Set-ExecutionPolicy Unrestricted*** after that press ***"A"*** and ***enter***.
+
+![](Images/1.png)
