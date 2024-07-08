@@ -20,7 +20,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 - SetTimerResolution.exe
 
 ## How to tune Timer Resolution
-1. Copy bench.ps1, MeasureSleep.exe and SetTimerResolution.exe into C: drive
+1. Copy **bench.ps1**, **MeasureSleep.exe** and **SetTimerResolution.exe** into **C: drive**
 
 2. Open Regestry-Editor and go to ***HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel***, than create a new dword called ***GlobalTimerResolutionRequests*** with the value set to ***1***
 
@@ -56,3 +56,6 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 - Right click on the shortcut and type at the end of the path " -resolution 5XXX -no-console" (replace 5XXX with your result from 7.)
 
 ![](Images/7.png)
+
+## Credits
+amitxv deserves all the credit. You can visit him at https://github.com/amitxv
