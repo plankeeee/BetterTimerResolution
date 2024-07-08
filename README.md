@@ -50,7 +50,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 - You can also plot the results on this website: https://chart-studio.plotly.com/create/#/
 
 ![](Images/5.png)
-<img src="Images/6.png" width=600>
+<img src="Images/6.png" width=500>
 
 8. Press **Win + R** and type ***"shell:startup"*** than create a shortcut of ***"TimerResolution.exe"*** and paste it into that folder
 - Right click on the shortcut and type at the end of the path " -resolution 5XXX -no-console" (replace 5XXX with your result from 7.)
