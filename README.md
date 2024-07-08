@@ -13,4 +13,3 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 
 ## How to tune Timer Resolution:
 First step: open Windows PowerShell as Admin and use this command: ***Set-ExecutionPolicy Unrestricted*** after that press "A" and enter.
-![asd](https://imgur.com/gallery/greasy-little-nobody-you-do-have-good-pone-structure-XhIfJgn)
