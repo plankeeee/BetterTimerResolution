@@ -85,7 +85,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 ![](Images/test4.png)
 
 ## Benchmark
-- test was done in CS2 in a custom workshop map
+Test was done in Counter-Strike 2 in a custom workshop map
 
 ![](Images/cs2FPScomp.png)
 
