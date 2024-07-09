@@ -65,23 +65,24 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 
 ## Testing
 - All testing is done with the App **MeasureSleep.exe**
-- To test it yourself start MeasureSleep.exe as Admin
+- To test it yourself start MeasureSleep.exe as **Admin**
+- The ***closer*** the number following "slept" is to ***1*** and the ***lower*** the delta, the ***more optimal*** the outcome
 
-1. without Timer Resolution / GlobalTimerResolutionRequests 1 / disabledynamictick yes
+1. **without** Timer Resolution / GlobalTimerResolutionRequests **1** / disabledynamictick **yes**
 
 ![](Images/test1.png)
 
-2. with Timer Resolution at 0.51ms / GlobalTimerResolutionRequests 1 / disabledynamictick yes
+2. **with** Timer Resolution at 0.51ms / GlobalTimerResolutionRequests **1** / disabledynamictick **yes**
 
 ![](Images/test2.png)
 
-3. without Timer Resolution / GlobalTimerResolutionRequests 0 / disabledynamictick false
+3. **without** Timer Resolution / GlobalTimerResolutionRequests **0** / disabledynamictick **false**
 
 ![](Images/test3.png)
 
-4. with Timer Resolution at 0.51ms / GlobalTimerResolutionRequests 0 / disabledynamictick false
+4. **with** Timer Resolution at 0.51ms / GlobalTimerResolutionRequests **0** / disabledynamictick **false**
 
 ![](Images/test4.png)
 
 ## Credits
-amitxv deserves all the credit. You can visit him at https://github.com/amitxv
+***amitxv*** deserves all the credit. You can visit him at https://github.com/amitxv
