@@ -84,5 +84,18 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 
 ![](Images/test4.png)
 
+## Benchmark
+- test was done in CS2 in a custom workshop map
+
+![](Images/cs2FPScomp.png)
+
+My PC Specs:
+- Windows 11 23H2
+- Ryzen 7 5800x3D (-30 CO Curve / PPT: 100, TDC: 70, EDC: 100)
+- MSI B550 Gaming Plus
+- Gigabyte RTX 3070 Gaming OC (undervolted) 556.12
+- Corsair Vengeance RGB RT 3600MHz CL16
+- WD_BLACK SN850X 2TB
+
 ## Credits
 ***amitxv*** deserves all the credit. You can visit him at https://github.com/amitxv
