@@ -37,21 +37,21 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 ![](Images/ps1.png)
 
 6. Use a ***CPU Stress Test*** (for me I used Prime95) so the CPU operates at the highest P-State P0.
-- ***Warning!***: Running a CPU stress-test or benchmark can cause overheating, system instability, and accelerated hardware wear. Ensure adequate cooling, monitor system health, and avoid prolonged testing to prevent potential damage.
-- Link to download Prime95: https://www.mersenne.org/download/
+> * ***Warning!***: Running a CPU stress-test or benchmark can cause overheating, system instability, and accelerated hardware wear. Ensure adequate cooling, monitor system health, and avoid prolonged testing to prevent potential damage.
+> * Link to download Prime95: https://www.mersenne.org/download/
 
 ![](Images/3.png)
 
 7. Run ***Windows PowerShell*** as ***Admin*** and use these commands: ***"cd.."***, ***"cd.."***, ***".\bench.ps1"*** and ***"R"*** or in my case ***"M"*** to run it once and ***enter***
-- It will run for about 5min
-- After it is finished you can close it
+> * It will run for about 5min
+> * After it is finished you can close it
 
 ![](Images/4.png)
 
 8. After the Benchmark is finished there will be a file called ***"results.txt"*** with important informations, but you might only need the first 20 or less
-- ***Now you should stop and exit your CPU Stress Test!***
-- You need to look after the ***lowest DeltaMs*** and ***STDEV***, in my case it is at ***0.51ms*** (your results ***can and will*** be completely different)
-- You can also plot the results on this website: https://chart-studio.plotly.com/create/#/
+> * ***Now you should stop and exit your CPU Stress Test!***
+> * You need to look after the ***lowest DeltaMs*** and ***STDEV***, in my case it is at ***0.51ms*** (your results ***can and will*** be completely different)
+> * You can also plot the results on this website: https://chart-studio.plotly.com/create/#/
 
 ![](Images/5.png)
 <img src="Images/6.png" width=500>
@@ -59,7 +59,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 9. For ***results*** scroll down to "Testing"
 
 10. To open Timer Resolution on Windows startup press **Win + R** and type ***"shell:startup"*** than create a shortcut of ***"TimerResolution.exe"*** and paste it into that folder
-- Right click on the shortcut and type at the end of the path " --resolution 5XXX --no-console" (replace 5XXX with your result from 7.)
+> * Right click on the shortcut and type at the end of the path " --resolution 5XXX --no-console" (replace 5XXX with your result from 7.)
 
 ![](Images/7.png)
 
