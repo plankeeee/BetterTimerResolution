@@ -28,7 +28,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 
 3. ***Restart*** your PC
 
-4. Open ***Windows PowerShell*** as ***Admin*** and use this command: ***Set-ExecutionPolicy Unrestricted*** after that press ***"A"*** and ***enter***
+4. Open ***Windows PowerShell*** as ***Admin*** and use this command: ***"Set-ExecutionPolicy Unrestricted"*** after that press ***"A"*** and ***enter***
 
 ![](Images/ps1.png)
 
