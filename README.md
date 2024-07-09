@@ -53,7 +53,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 <img src="Images/6.png" width=500>
 
 8. To open Timer Resolution on Windows startup press **Win + R** and type ***"shell:startup"*** than create a shortcut of ***"TimerResolution.exe"*** and paste it into that folder
-- Right click on the shortcut and type at the end of the path " -resolution 5XXX -no-console" (replace 5XXX with your result from 7.)
+- Right click on the shortcut and type at the end of the path " --resolution 5XXX --no-console" (replace 5XXX with your result from 7.)
 
 ![](Images/7.png)
 
