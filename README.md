@@ -22,7 +22,7 @@ Therefore, it is necessary to adjust the timer resolution to the specific resolu
 ## How to tune Timer Resolution
 1. Copy **bench.ps1**, **MeasureSleep.exe** and **SetTimerResolution.exe** into **C: drive**
 
-2. Open Regestry-Editor and go to ***"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel"***, than create a new dword called ***"GlobalTimerResolutionRequests"*** with the value set to ***"1"***
+2. Open Registry-Editor and go to ***"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel"***, than create a new dword called ***"GlobalTimerResolutionRequests"*** with the value set to ***"1"***
 
 ![](Images/2.png)
 
