@@ -1,4 +1,4 @@
-#Warning!
+# Warning!
 > Please be advised that this procedure is to be carried out at your own risk.
 > There is a possibility that it will result in an increase in power.
 > It should be noted that this may be a placebo effect.
