@@ -77,7 +77,7 @@ A timer resolution of 0.5ms may not be suitable for all users as it can potentia
 8. After the benchmark, a file called `results.txt` will be created. Look for the **lowest DeltaMs** and **STDEV** values. For me it is **0.51ms** (results can vary).  
    > You can also plot the results on [Plotly](https://chart-studio.plotly.com/create/#/).
 
-   ![](Images/5.png)  
+   ![](Images/5.png)
    <img src="Images/6.png" width=500>
 
 9. Press **Win + R**, type `shell:startup`, and create a shortcut for `TimerResolution.exe`. Paste it into the startup folder and modify the shortcut path to include:  
