@@ -1,10 +1,4 @@
-
-# Warning!
-> **Please be advised that this procedure is to be carried out at your own risk.**
-> There is a possibility that it will result in an increase in power.
-> It should be noted that this may be a placebo effect.
-
-## Timer Resolution
+# Timer Resolution
 
 **Timer Resolution** refers to the smallest unit of time that a timer can measure. It is a crucial concept in software and operating systems, especially in high-resolution timing and performance-critical applications.
 
