@@ -1,104 +1,132 @@
+
 # Warning!
-> Please be advised that this procedure is to be carried out at your own risk.
+> **Please be advised that this procedure is to be carried out at your own risk.**
 > There is a possibility that it will result in an increase in power.
 > It should be noted that this may be a placebo effect.
 
 ## Timer Resolution
-Timer Resolution refers to the smallest unit of time that a timer can measure. It is a concept often used in the context of software and operating systems, particularly in high-resolution timing and performance-critical applications.
 
-## Why should you use Timer Resolution
-Timer resolution affects the ***precision and accuracy*** of time measurements. A higher timer resolution means the timer can measure smaller intervals, leading to more precise and accurate timing.
-In applications where precise timing is critical, such as audio and video processing, gaming, and real-time control systems, high-resolution timers ensure ***smooth and accurate*** operation.
-High-resolution timers can help ***reduce latency*** in time-sensitive applications, leading to ***faster and more responsive*** systems.
-On Windows, the default system timer resolution is typically around ***15.6ms*** and with Timer Resolution it drops down to around ***0.5ms***. [Results](https://github.com/plankeeee/BetterTimerResolution?tab=readme-ov-file#testing)
+**Timer Resolution** refers to the smallest unit of time that a timer can measure. It is a crucial concept in software and operating systems, especially in high-resolution timing and performance-critical applications.
 
-## Why "Better" Timer Resolution
-It is evident that the timer resolution of 0.5ms is ***not*** a viable option for all users, as it may even result in a deterioration of performance.
-Therefore, it is necessary to adjust the timer resolution to the specific resolution that the user's PC can handle optimally.
+## Why Should You Use Timer Resolution?
+
+Timer resolution affects the **precision and accuracy** of time measurements. A higher timer resolution allows for more precise timing, which is essential in various applications, such as:
+
+- **Audio and video processing**
+- **Gaming**
+- **Real-time control systems**
+
+In these scenarios, high-resolution timers help to **reduce latency** and ensure **smooth and accurate** operations, resulting in **faster and more responsive** systems.
+
+On Windows, the default system timer resolution is typically around **15.6ms**. With Timer Resolution adjustments, it can be reduced to around **0.5ms**. [Results](https://github.com/plankeeee/BetterTimerResolution?tab=readme-ov-file#testing)
+
+## Why "Better" Timer Resolution?
+
+A timer resolution of 0.5ms may not be suitable for all users as it can potentially deteriorate performance. Therefore, it is essential to adjust the timer resolution to the optimal setting for your specific system.
 
 ## Requirements
+
 - Windows 11
 - Registry Editor
 - CPU Stress Test (Prime95)
-- bench.ps1
-- MeasureSleep.exe
-- SetTimerResolution.exe
+- `bench.ps1`
+- `MeasureSleep.exe`
+- `SetTimerResolution.exe`
 
-## How to tune Timer Resolution
-1. Copy **bench.ps1**, **MeasureSleep.exe** and **SetTimerResolution.exe** into **C: drive**
+## How to Tune Timer Resolution
 
-2. Open Registry-Editor and go to ***"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel"***, then create a new dword called ***"GlobalTimerResolutionRequests"*** with the value set to ***"1"***
+1. **Copy Files**  
+   Copy `bench.ps1`, `MeasureSleep.exe`, and `SetTimerResolution.exe` into the **C: drive**.
 
-![](Images/2.png)
+2. **Modify Registry**  
+   Open Registry Editor and navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel`. Create a new DWORD called `GlobalTimerResolutionRequests` with the value set to `1`.
 
-3. Open ***CMD*** as ***Admin*** and use this command: ***"bcdedit /set disabledynamictick yes"***
+   ![](Images/2.png)
 
-![](Images/8.png)
+3. **Disable Dynamic Tick**  
+   Open **CMD** as **Admin** and execute:  
+   ```cmd
+   bcdedit /set disabledynamictick yes
+   ```
 
-4. ***Restart*** your PC
+   ![](Images/8.png)
 
-5. Open ***Windows PowerShell*** as ***Admin*** and use this command: ***"Set-ExecutionPolicy Unrestricted"*** after that press ***"A"*** and ***enter***
+4. **Restart Your PC**
 
-![](Images/ps1.png)
+5. **Set Execution Policy**  
+   Open **Windows PowerShell** as **Admin** and execute:  
+   ```powershell
+   Set-ExecutionPolicy Unrestricted
+   ```  
+   After that, press **"A"** and **enter**.
 
-6. Use a ***CPU Stress Test*** (for me I used Prime95) so the CPU operates at the highest P-State P0.
-> * ***Warning!***: Running a CPU stress-test or benchmark can cause overheating, system instability, and accelerated hardware wear. Ensure adequate cooling, monitor system health, and avoid prolonged testing to prevent potential damage.
-> * Link to download Prime95: https://www.mersenne.org/download/
+   ![](Images/ps1.png)
 
-![](Images/3.png)
+6. **Run CPU Stress Test**  
+   Use a **CPU Stress Test** (e.g., Prime95) to operate the CPU at the highest P-State P0.  
+   > **Warning!**: Running a CPU stress test can cause overheating, system instability, and accelerated hardware wear. Ensure adequate cooling and monitor system health.
 
-7. Run ***Windows PowerShell*** as ***Admin*** and use these commands: ***"cd.."***, ***"cd.."***, ***".\bench.ps1"*** and ***"R"*** or in my case ***"M"*** to run it once and ***enter***
-> * It will run for about 5min
-> * After it is finished you can close it
+   ![](Images/3.png)
 
-![](Images/4.png)
+7. **Run Benchmark**  
+   Open **Windows PowerShell** as **Admin** and navigate to the root directory using:  
+   ```powershell
+   cd..
+   cd..
+   .\bench.ps1
+   ```  
+   Choose **"R"** (or in some cases **"M"**) to run it once and press **enter**.  
+   > The benchmark will run for about 5 minutes. After it finishes, you can close it.
 
-8. After the Benchmark is finished there will be a file called ***"results.txt"*** with important informations, but you might only need the first 20 or less
-> * ***Now you should stop and exit your CPU Stress Test!***
-> * You need to look after the ***lowest DeltaMs*** and ***STDEV***, in my case it is at ***0.51ms*** (your results ***can and will*** be completely different)
-> * You can also plot the results on this website: https://chart-studio.plotly.com/create/#/
+   ![](Images/4.png)
 
-![](Images/5.png)
-<img src="Images/6.png" width=500>
+8. **Analyze Results**  
+   After the benchmark, a file called `results.txt` will be created. Look for the **lowest DeltaMs** and **STDEV** values. For example, it might be **0.51ms** (results can vary).  
+   > You can also plot the results on [Plotly](https://chart-studio.plotly.com/create/#/).
 
-9. To open Timer Resolution on Windows startup press **Win + R** and type ***"shell:startup"*** than create a shortcut of ***"TimerResolution.exe"*** and paste it into that folder
-> * Right click on the shortcut and type at the end of the path " --resolution 5XXX --no-console" (replace 5XXX with your result from 7.)
+   ![](Images/5.png)  
+   <img src="Images/6.png" width=500>
 
-![](Images/7.png)
+9. **Set Timer Resolution on Startup**  
+   Press **Win + R**, type `shell:startup`, and create a shortcut for `TimerResolution.exe`. Paste it into the startup folder and modify the shortcut path to include:  
+   ```
+   --resolution 5XXX --no-console
+   ```  
+   (Replace `5XXX` with your result from step 7.)
+
+   ![](Images/7.png)
 
 ## Testing
-- All testing is done with the App **MeasureSleep.exe**
-- To test it yourself start MeasureSleep.exe as **Admin**
-- The ***closer*** the number following "slept" is to ***1*** and the ***lower*** the delta, the ***more optimal*** the outcome
 
-1. **without** Timer Resolution / GlobalTimerResolutionRequests **0** / disabledynamictick **false**
+All testing was conducted with the application **MeasureSleep.exe**. To test, start `MeasureSleep.exe` as **Admin** and observe the results. The goal is for the number following "slept" to be close to **1** and the delta to be low, indicating optimal performance.
 
-![](Images/test3.png)
+1. **Without Timer Resolution / GlobalTimerResolutionRequests 0 / disabledynamictick false**  
+   ![](Images/test3.png)
 
-2. **without** Timer Resolution / GlobalTimerResolutionRequests **1** / disabledynamictick **yes**
+2. **Without Timer Resolution / GlobalTimerResolutionRequests 1 / disabledynamictick yes**  
+   ![](Images/test1.png)
 
-![](Images/test1.png)
+3. **With Timer Resolution at 0.51ms / GlobalTimerResolutionRequests 0 / disabledynamictick false**  
+   ![](Images/test4.png)
 
-3. **with** Timer Resolution at 0.51ms / GlobalTimerResolutionRequests **0** / disabledynamictick **false**
-
-![](Images/test4.png)
-
-4. **with** Timer Resolution at 0.51ms / GlobalTimerResolutionRequests **1** / disabledynamictick **yes**
-
-![](Images/test2.png)
+4. **With Timer Resolution at 0.51ms / GlobalTimerResolutionRequests 1 / disabledynamictick yes**  
+   ![](Images/test2.png)
 
 ## Benchmark
-Test was done in Counter-Strike 2 in a custom workshop map
+
+Testing was performed in Counter-Strike 2 on a custom workshop map. (All settings are at high)
 
 ![](Images/cs2FPScomp.png)
 
-My PC Specs:
-- Windows 11 23H2
-- Ryzen 7 5800x3D (-30 CO Curve / PPT: 100, TDC: 70, EDC: 100)
-- MSI B550 Gaming Plus
-- Gigabyte RTX 3070 Gaming OC (undervolted) 556.12
-- Corsair Vengeance RGB RT 3600MHz CL16
-- WD_BLACK SN850X 2TB
+### My PC Specs
+
+- **OS**: Windows 11 23H2
+- **CPU**: Ryzen 7 5800x3D (-30 CO Curve / PPT: 100, TDC: 70, EDC: 100)
+- **Motherboard**: MSI B550 Gaming Plus
+- **GPU**: Gigabyte RTX 3070 Gaming OC (undervolted) 556.12
+- **RAM**: Corsair Vengeance RGB RT 3600MHz CL16
+- **Storage**: WD_BLACK SN850X 2TB
 
 ## Credits
-***amitxv*** deserves all the credit. You can visit him at https://github.com/amitxv
+
+All credit goes to **amitxv**. You can visit his profile at [GitHub](https://github.com/amitxv).
