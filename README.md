@@ -35,26 +35,22 @@ A timer resolution of 0.5ms may not be suitable for all users as it can potentia
 
 ## How to Tune Timer Resolution
 
-1. **Copy Files**  
-   Copy `bench.ps1`, `MeasureSleep.exe`, and `SetTimerResolution.exe` into the **C: drive**.
+1. Copy `bench.ps1`, `MeasureSleep.exe`, and `SetTimerResolution.exe` into the **C: drive**.
 
-2. **Modify Registry**  
-   Open Registry Editor and navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel`. Create a new DWORD called `GlobalTimerResolutionRequests` with the value set to `1`.
+2. Open Registry Editor and navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel`. Create a new DWORD called `GlobalTimerResolutionRequests` with the value set to `1`.
 
    ![](Images/2.png)
 
-3. **Disable Dynamic Tick**  
-   Open **CMD** as **Admin** and execute:  
+3. Open **CMD** as **Admin** and execute:  
    ```cmd
    bcdedit /set disabledynamictick yes
    ```
 
    ![](Images/8.png)
 
-4. **Restart Your PC**
+4. Restart Your PC
 
-5. **Set Execution Policy**  
-   Open **Windows PowerShell** as **Admin** and execute:  
+5. Open **Windows PowerShell** as **Admin** and execute:  
    ```powershell
    Set-ExecutionPolicy Unrestricted
    ```  
@@ -62,14 +58,12 @@ A timer resolution of 0.5ms may not be suitable for all users as it can potentia
 
    ![](Images/ps1.png)
 
-6. **Run CPU Stress Test**  
-   Use a **CPU Stress Test** (e.g., Prime95) to operate the CPU at the highest P-State P0.  
+6. Use a **CPU Stress Test** (e.g., Prime95) to operate the CPU at the highest P-State P0.  
    > **Warning!**: Running a CPU stress test can cause overheating, system instability, and accelerated hardware wear. Ensure adequate cooling and monitor system health.
 
    ![](Images/3.png)
 
-7. **Run Benchmark**  
-   Open **Windows PowerShell** as **Admin** and navigate to the root directory using:  
+7. Open **Windows PowerShell** as **Admin** and navigate to the root directory using:  
    ```powershell
    cd..
    cd..
@@ -80,15 +74,13 @@ A timer resolution of 0.5ms may not be suitable for all users as it can potentia
 
    ![](Images/4.png)
 
-8. **Analyze Results**  
-   After the benchmark, a file called `results.txt` will be created. Look for the **lowest DeltaMs** and **STDEV** values. For example, it might be **0.51ms** (results can vary).  
+8. After the benchmark, a file called `results.txt` will be created. Look for the **lowest DeltaMs** and **STDEV** values. For me it is **0.51ms** (results can vary).  
    > You can also plot the results on [Plotly](https://chart-studio.plotly.com/create/#/).
 
    ![](Images/5.png)  
    <img src="Images/6.png" width=500>
 
-9. **Set Timer Resolution on Startup**  
-   Press **Win + R**, type `shell:startup`, and create a shortcut for `TimerResolution.exe`. Paste it into the startup folder and modify the shortcut path to include:  
+9. Press **Win + R**, type `shell:startup`, and create a shortcut for `TimerResolution.exe`. Paste it into the startup folder and modify the shortcut path to include:  
    ```
    --resolution 5XXX --no-console
    ```  
