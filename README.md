@@ -115,4 +115,4 @@ Testing was performed in Counter-Strike 2 on a custom workshop map. (All setting
 
 ## Credits
 
-All credit goes to **amitxv**. You can visit his profile at [GitHub](https://github.com/amitxv).
+All files came from **amitxv**. You can visit him on [GitHub](https://github.com/amitxv).
